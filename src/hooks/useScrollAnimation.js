@@ -43,6 +43,9 @@ export function useScrollAnimation({ scene1Ref, headlineRef, subRef, formRef, en
 
           // ── 1. Scene 1 exit: precision dolly zoom & seamless transition ───────────────────────
           if (scene1Ref?.current) {
+            // Dark vignette transition
+            tl.fromTo('#scene1-vignette', { opacity: 0 }, { opacity: 1, ease: 'none', duration: 0.4 }, 0)
+
             // Phase 1: Background expands and then fades
             tl.fromTo('#scene1-bg', { scale: 1.00 }, { scale: 1.03, ease: 'none', duration: 0.6 }, 0)
             tl.to(scene1Ref.current, { autoAlpha: 0, ease: 'power1.inOut', duration: 0.2 }, 0.4) // Hides everything & removes pointer events

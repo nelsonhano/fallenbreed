@@ -1,6 +1,7 @@
 import comingSoon from '../assets/Coming soon.jpg'
 import logoSvg from '../assets/Logo.svg'
 import person2 from '../assets/Person2.png'
+import downArrow from '../assets/Down arrow.svg'
 
 export default function Scene1() {
   return (
@@ -38,22 +39,7 @@ export default function Scene1() {
           willChange: 'transform, opacity',
         }}
       >
-        {/* Glow blob behind logo */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '120%',
-            paddingBottom: '60%',
-            borderRadius: '50%',
-            background:
-              'radial-gradient(ellipse, rgba(255,235,160,0.22) 0%, rgba(220,180,80,0.08) 50%, transparent 72%)',
-            filter: 'blur(28px)',
-            zIndex: -1,
-          }}
-        />
+        {/* Vignette glow removed */}
         <img
           src={logoSvg}
           alt="Fallen Breed"
@@ -96,35 +82,56 @@ export default function Scene1() {
         />
       </div>
 
-      {/* Vignette overlay — dark edges on all sides */}
+      {/* Static Vignette removed */}
+
+      {/* Down Arrows - Bouncing */}
       <div
+        className="bounce-group"
+        style={{
+          position: 'absolute',
+          bottom: '4vh',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 6,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1px',
+        }}
+      >
+        <img
+          src={downArrow}
+          alt="Scroll Down"
+          style={{
+            width: 'clamp(24px, 4vw, 36px)',
+            filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.4))',
+            display: 'block',
+          }}
+        />
+        <img
+          src={downArrow}
+          alt=""
+          style={{
+            width: 'clamp(24px, 4vw, 36px)',
+            filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.4))',
+            display: 'block',
+          }}
+        />
+      </div>
+
+      {/* Dark vignette transition overlay */}
+      <div
+        id="scene1-vignette"
         style={{
           position: 'absolute',
           inset: 0,
-          background: `
-            radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.72) 100%)
-          `,
-          zIndex: 4,
+          background: 'radial-gradient(ellipse at center, transparent 10%, rgba(0,0,0,1) 90%)',
+          zIndex: 7,
+          opacity: 0,
           pointerEvents: 'none',
         }}
       />
-      {/* Extra gradient — stronger bottom and top fade */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: `
-            linear-gradient(to bottom,
-              rgba(0,0,0,0.35) 0%,
-              transparent 15%,
-              transparent 65%,
-              rgba(0,0,0,0.65) 100%
-            )
-          `,
-          zIndex: 4,
-          pointerEvents: 'none',
-        }}
-      />
+      {/* Extra gradient fade removed */}
     </div>
   )
 }

@@ -51,23 +51,7 @@ export default function Scene2({ headlineRef, subRef, formRef }) {
         paddingRight: '1rem',
       }}
     >
-      {/* Spotlight — radial cone from top center, mix-blend-mode screen */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 'min(900px, 140vw)',
-          height: '75vh',
-          background:
-            'radial-gradient(ellipse 55% 80% at 50% 0%, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 45%, transparent 70%)',
-          mixBlendMode: 'screen',
-          pointerEvents: 'none',
-          zIndex: 1,
-        }}
-      />
+      {/* Spotlight removed */}
 
       {/* 2D Logo mark — sits at top of scene2 */}
       <div
