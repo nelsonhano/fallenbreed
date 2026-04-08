@@ -30,7 +30,7 @@ export default function Scene1() {
         id="scene1-logo"
         style={{
           position: 'absolute',
-          top: '12%',
+          top: 'clamp(12%, 24vh - 6vw, 22%)',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 2,
@@ -59,7 +59,7 @@ export default function Scene1() {
           alt="Fallen Breed"
           style={{
             display: 'block',
-            width: 'clamp(220px, 38vw, 520px)',
+            width: 'clamp(270px, 38vw, 520px)',
             filter:
               'drop-shadow(0 0 24px rgba(255,240,180,0.55)) drop-shadow(0 0 56px rgba(200,170,80,0.25))',
           }}

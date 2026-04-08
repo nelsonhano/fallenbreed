@@ -57,8 +57,8 @@ function LogoModel({ scrollProgress }) {
 
     const isMobile  = size.width < 768
     const target    = isMobile ? targetMRef.current : targetDRef.current
-    // Drop targetPosY to bring the logo closer down to the text
-    const targetPosY = isMobile ? 0.9 : 1.15
+    // Increase targetPosY to bring the logo higher up from the text on mobile
+    const targetPosY = isMobile ? 1.35 : 1.15
 
     const t = scrollProgress.current // 0 → 1
     
