@@ -1,0 +1,52 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gradient-text: linear-gradient(90deg, #a9a9a9 0%, #ffffff 50%, #a9a9a9 100%);
+  --color-bg: #000000;
+  --max-form-width: 520px;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+body {
+  font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #fff;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a9a9a9 0%, #ffffff 50%, #a9a9a9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

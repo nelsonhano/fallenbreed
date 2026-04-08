@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(printf '\\\\n')",
+      "Bash(npx create-vite@9.0.3 . --template vanilla)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
