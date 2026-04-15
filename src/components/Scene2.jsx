@@ -45,7 +45,7 @@ export default function Scene2({ headlineRef, subRef, formRef }) {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        paddingTop: '7vh',
+        paddingTop: 'clamp(6rem, 18vw, 10rem)',
         paddingBottom: '10vh',
         paddingLeft: '1rem',
         paddingRight: '1rem',
@@ -53,25 +53,16 @@ export default function Scene2({ headlineRef, subRef, formRef }) {
     >
       {/* Spotlight removed */}
 
-      {/* 2D Logo mark — sits at top of scene2 */}
+      {/* Invisible spacer — reserves vertical room for the fixed 3D logo above the headline */}
       <div
+        aria-hidden="true"
         style={{
-          marginBottom: '2rem',
-          position: 'relative',
-          zIndex: 2,
+          width: 'clamp(160px, 48vw, 320px)',
+          height: 'clamp(64px, 14vw, 128px)',
+          marginBottom: 'clamp(1rem, 3vw, 2.5rem)',
           visibility: 'hidden',
         }}
-      >
-        <img
-          src={logoSvg}
-          alt="Fallen Breed"
-          style={{
-            width: 'clamp(160px, 22vw, 300px)',
-            display: 'block',
-            filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.15))',
-          }}
-        />
-      </div>
+      />
 
       {/* Headline */}
       <h1

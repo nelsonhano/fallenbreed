@@ -19,10 +19,16 @@ html, body {
   overflow-x: hidden;
   background-color: #000;
   color: #fff;
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
 }
 
 body {
-  font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -41,7 +47,7 @@ body {
   color: #fff;
   letter-spacing: 0.3em;
   font-size: 0.7rem;
-  font-family: 'Arial Black', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .gradient-text {

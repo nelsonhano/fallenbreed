@@ -58,13 +58,34 @@ export function useScrollAnimation({ scene1Ref, headlineRef, subRef, formRef, en
           }
 
           // ── 2. Scene 2 content entrance ──────────────────────────────────
-          // Transition Scene 2 into view perfectly synchronized with the scroll timeline (0.64 to 1.00)
+          // Fade scene2 in quickly at 58-65% — NO scale so the email form
+          // remains completely static while the 3D logo scales down above it.
           tl.fromTo(
             '#scene2-wrapper',
-            { opacity: 0, scale: 1.16 },
-            { opacity: 1, scale: 1.00, ease: 'power2.out', duration: 0.36 },
-            0.64
+            { opacity: 0 },
+            { opacity: 1, ease: 'power2.out', duration: 0.10 },
+            0.58
           )
+
+          // Headline slides up subtly
+          if (headlineRef?.current) {
+            tl.fromTo(
+              headlineRef.current,
+              { y: 24, opacity: 0 },
+              { y: 0, opacity: 1, ease: 'power2.out', duration: 0.18 },
+              0.62
+            )
+          }
+
+          // Sub-heading slides up subtly
+          if (subRef?.current) {
+            tl.fromTo(
+              subRef.current,
+              { y: 16, opacity: 0 },
+              { y: 0, opacity: 1, ease: 'power2.out', duration: 0.16 },
+              0.68
+            )
+          }
 
         }
       )
